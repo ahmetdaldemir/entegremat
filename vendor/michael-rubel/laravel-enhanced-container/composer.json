@@ -1,0 +1,72 @@
+{
+    "name": "michael-rubel/laravel-enhanced-container",
+    "description": "This package provides DX tweaks for Service Container in Laravel.",
+    "keywords": [
+        "michael-rubel",
+        "laravel",
+        "laravel-enhanced-container",
+        "lec"
+    ],
+    "homepage": "https://github.com/michael-rubel/laravel-enhanced-container",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Rubel",
+            "email": "contact@observer.name",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/contracts": "^9.0",
+        "spatie/laravel-package-tools": "^1.9"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.3",
+        "laravel/pint": "^0.2.1",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^1.0",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5",
+        "roave/backward-compatibility-check": "^7.0|^8.0",
+        "roave/infection-static-analysis-plugin": "^1.25"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelRubel\\EnhancedContainer\\": "src"
+        },
+        "exclude-from-classmap": [
+            "vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php"
+        ],
+        "files": [
+            "src/Helpers/helpers.php",
+            "src/Overrides/Container.php",
+            "src/Overrides/BoundMethod.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MichaelRubel\\EnhancedContainer\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/testbench package:test --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelRubel\\EnhancedContainer\\LecServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

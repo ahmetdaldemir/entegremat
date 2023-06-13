@@ -1,0 +1,68 @@
+{
+    "name": "michael-rubel/laravel-formatters",
+    "description": "This package is a collection of classes you can use to standardize data formats in your Laravel application. It uses the Service Container to easily extend or override the formatter classes.",
+    "keywords": [
+        "michael-rubel",
+        "laravel",
+        "laravel-formatters"
+    ],
+    "homepage": "https://github.com/michael-rubel/laravel-formatters",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Rubel",
+            "email": "contact@observer.name",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-intl": "*",
+        "illuminate/contracts": "^9.7|^10.0",
+        "michael-rubel/laravel-enhanced-container": "^10.0|^11.0",
+        "spatie/laravel-package-tools": "^1.12"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.3",
+        "laravel/pint": "^1.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.2",
+        "orchestra/testbench": "^7.0|^8.0",
+        "phpunit/phpunit": "^9.5",
+        "roave/backward-compatibility-check": "^7.0|^8.0",
+        "roave/infection-static-analysis-plugin": "^1.25"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelRubel\\Formatters\\": "src"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MichaelRubel\\Formatters\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/testbench package:test --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelRubel\\Formatters\\FormatterServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

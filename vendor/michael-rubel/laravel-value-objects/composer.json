@@ -1,0 +1,67 @@
+{
+    "name": "michael-rubel/laravel-value-objects",
+    "description": "It is an example template for Laravel packages. Fill or change it the way you like.",
+    "keywords": [
+        "michael-rubel",
+        "laravel",
+        "laravel-value-objects"
+    ],
+    "homepage": "https://github.com/michael-rubel/laravel-value-objects",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Rubél",
+            "email": "contact@observer.name",
+            "role": "Author"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/contracts": "^9.33|^10.0",
+        "michael-rubel/laravel-formatters": "^7.0.6",
+        "phpmath/bignumber": "^1.2",
+        "spatie/laravel-package-tools": "^1.12"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.3",
+        "laravel/pint": "^1.2",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.2",
+        "orchestra/testbench": "^7.4|^8.0",
+        "pestphp/pest": "^1.16",
+        "phpunit/phpunit": "^9.5",
+        "roave/backward-compatibility-check": "^7.0|^8.0",
+        "roave/infection-static-analysis-plugin": "^1.25"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelRubel\\ValueObjects\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MichaelRubel\\ValueObjects\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/testbench package:test --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "infection/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+              "MichaelRubel\\ValueObjects\\ValueObjectServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

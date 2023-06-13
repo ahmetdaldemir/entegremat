@@ -1,0 +1,28 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - src
+
+    # The level 9 is the highest level
+    level: max
+
+    phpVersion: 80000
+
+    excludePaths:
+        - ./src/Overrides
+
+    ignoreErrors:
+        - '#Parameter (\#)(\d) \$callback of method Illuminate\\Container\\Container::call\(\) expects \(callable\(\): (.*)#'
+        - '#Property MichaelRubel\\EnhancedContainer\\Exceptions\\InstanceInteractionException\:\:\$message has no type specified\.#'
+        - '#Cannot call method pipe\(\) on mixed.#'
+        - '#(.*)getDependencies\(\) expects class\-string, string given\.#'
+        - '#(.*)resolvePassedClass\(\) expects string, object\|string given\.#'
+
+    checkMissingIterableValueType: false
+
+    reportUnmatchedIgnoredErrors: false
+
+    checkOctaneCompatibility: true
