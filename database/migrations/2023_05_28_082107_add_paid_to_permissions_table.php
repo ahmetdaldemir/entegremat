@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('permissions', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('company_id')->default(1);
+            $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
